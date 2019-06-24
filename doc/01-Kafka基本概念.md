@@ -1,7 +1,11 @@
+---
 title: 01-Kafka基本概念
 date: 2019-06-24
 categories: learning-in-kafka
 tags: [Kafka]
+---
+
+
 
 `Kafka`采用`Scala`语言开发的一个多分区、多副本且基于`ZooKeeper`协调的分布式消息系统。
 
