@@ -3,7 +3,10 @@
 
 ## 读书笔记目录
 
+> [目录](doc)
+
 - [01-Kafka基本概念](doc/01-Kafka基本概念.md)
+- [02-Kafka安装与配置.md](doc/02-Kafka安装与配置.md)
 
 
 
