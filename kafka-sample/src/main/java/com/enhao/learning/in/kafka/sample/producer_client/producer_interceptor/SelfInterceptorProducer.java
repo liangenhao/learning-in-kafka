@@ -1,5 +1,8 @@
-package com.enhao.learning.in.kafka.sample.producer_client;
+package com.enhao.learning.in.kafka.sample.producer_client.producer_interceptor;
 
+import com.enhao.learning.in.kafka.sample.producer_client.partitioner.SelfPartitioner;
+import com.enhao.learning.in.kafka.sample.producer_client.serializer.Company;
+import com.enhao.learning.in.kafka.sample.producer_client.serializer.CompanySerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -10,13 +13,10 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 /**
- * 同步发送消息模式
- *
  * @author enhao
  */
 @Slf4j
-public class SyncProducer {
-
+public class SelfInterceptorProducer {
     /**
      * kafka 集群地址
      */
@@ -34,6 +34,8 @@ public class SyncProducer {
         // 序列化器
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        // 拦截器链，若有多个拦截器，用逗号隔开
+        properties.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, PrefixProducerInterceptor.class.getName());
         // 客户端id
         properties.put(ProducerConfig.CLIENT_ID_CONFIG, "producer.client.id.demo");
 
@@ -45,12 +47,13 @@ public class SyncProducer {
         // 生产者实例
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         // 消息对象
-        ProducerRecord<String, String> record = new ProducerRecord<>(topic, "hello, sync producer");
+        ProducerRecord<String, String> record = new ProducerRecord<>(topic, "self interceptor");
         // 发送消息
         try {
             producer.send(record).get();
         } catch (InterruptedException | ExecutionException e) {
             log.error("sync producer send error", e);
         }
+        producer.close();
     }
 }

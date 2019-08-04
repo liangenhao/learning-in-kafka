@@ -31,6 +31,7 @@ public class Producer {
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC, "hello, Kafka!");
         try {
+            // 发后即忘的发送消息模式
             producer.send(record);
         } catch (Exception e) {
             e.printStackTrace();

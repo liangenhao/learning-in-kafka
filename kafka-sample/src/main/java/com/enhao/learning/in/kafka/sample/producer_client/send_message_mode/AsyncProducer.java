@@ -1,4 +1,4 @@
-package com.enhao.learning.in.kafka.sample.producer_client;
+package com.enhao.learning.in.kafka.sample.producer_client.send_message_mode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.*;
