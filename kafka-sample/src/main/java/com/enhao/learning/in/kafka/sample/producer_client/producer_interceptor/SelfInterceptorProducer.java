@@ -13,6 +13,7 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 /**
+ * 自定义生产者拦截器生产者
  * @author enhao
  */
 @Slf4j
@@ -25,7 +26,7 @@ public class SelfInterceptorProducer {
     /**
      * 消息发往的主题topic
      */
-    public static final String topic = "topic-demo";
+    public static final String topic = "self-interceptor-topic";
 
     public static Properties initConfig() {
         Properties properties = new Properties();

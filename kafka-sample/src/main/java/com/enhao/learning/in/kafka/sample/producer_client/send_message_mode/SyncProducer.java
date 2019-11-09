@@ -25,7 +25,7 @@ public class SyncProducer {
     /**
      * 消息发往的主题topic
      */
-    public static final String topic = "topic-demo";
+    public static final String topic = "sync-message-mode-topic";
 
     public static Properties initConfig() {
         Properties properties = new Properties();

@@ -23,7 +23,7 @@ public class SelfSerializerProducer {
     /**
      * 消息发往的主题topic
      */
-    public static final String topic = "topic-demo";
+    public static final String topic = "self-serializer-topic";
 
     public static Properties initConfig() {
         Properties properties = new Properties();
