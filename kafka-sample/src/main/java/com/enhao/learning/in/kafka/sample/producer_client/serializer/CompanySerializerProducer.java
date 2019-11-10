@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
  * @author enhao
  */
 @Slf4j
-public class SelfSerializerProducer {
+public class CompanySerializerProducer {
     /**
      * kafka 集群地址
      */
