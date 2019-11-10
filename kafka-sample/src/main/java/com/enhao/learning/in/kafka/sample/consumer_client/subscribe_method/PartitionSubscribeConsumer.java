@@ -73,12 +73,15 @@ public class PartitionSubscribeConsumer {
 
 
         // 3. 消息消费
-        while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
-            for (ConsumerRecord<String, String> record : records) {
-                System.out.println(record.value());
+        try {
+            while (true) {
+                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
+                for (ConsumerRecord<String, String> record : records) {
+                    System.out.println(record.value());
+                }
             }
+        } finally {
+            consumer.close();
         }
-
     }
 }
