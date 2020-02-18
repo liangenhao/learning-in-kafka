@@ -12,6 +12,8 @@ tags: [Kafka]
 3. ACL。
 4. 管理主题。
 
+## 常用方法
+
 `KafkaAdminClient`继承了`AdminClient`抽象类。提供了常用方法：
 
 - 创建主题：
