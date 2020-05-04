@@ -1,6 +1,8 @@
 # learning-in-kafka
 《深入理解Kafka 核心设计与实践原理》的读书笔记 + 操作实践。
 
+> 2020.5.4 已经合并到[learning-in-series](https://github.com/liangenhao/learning-in-series)，本工程不再更新。
+
 ## 读书笔记目录
 
 > [目录](doc)
